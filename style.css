@@ -1,0 +1,90 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+.chess-container {
+    text-align: center;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+.chessboard {
+    display: grid;
+    grid-template-columns: repeat(8, 60px);
+    grid-template-rows: repeat(8, 60px);
+    gap: 0;
+    border: 2px solid #2c3e50;
+    margin: 0 auto;
+}
+
+.square {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s;
+}
+
+.light {
+    background-color: #f0d9b5;
+}
+
+.dark {
+    background-color: #b58863;
+}
+
+.selected {
+    background-color: rgba(20, 85, 30, 0.5) !important;
+}
+
+.possible-move {
+    background-color: rgba(20, 85, 30, 0.3);
+}
+
+.status {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Black pieces */
+[data-color="black"] {
+    color: #000;
+}
+
+/* White pieces */
+[data-color="white"] {
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 600px) {
+    .chessboard {
+        grid-template-columns: repeat(8, 40px);
+        grid-template-rows: repeat(8, 40px);
+    }
+    .square {
+        width: 40px;
+        height: 40px;
+        font-size: 30px;
+    }
+}
